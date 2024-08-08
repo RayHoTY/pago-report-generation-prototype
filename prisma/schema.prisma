@@ -1,0 +1,54 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+// Prisma schema for Project CYF is shown below for reference:
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// add model here
+model Threat {
+  id                String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  dashboardTenantId String   @db.Uuid
+  tenantName        String   @db.VarChar(100)
+  downloadPath      String   @db.VarChar(100)
+  status            String   @db.VarChar(100)
+  appliedTo         String   @db.VarChar(3600)
+  reason            String   @db.VarChar(100)
+  addedBy           String   @db.VarChar(100)
+  addedOn           DateTime @db.Timestamp()
+  agentVersion      String   @db.VarChar(100)
+  autoRun           Boolean  @db.Boolean
+  avIndustry        Int?     @db.SmallInt
+  certIssuer        String?  @db.VarChar(100)
+  certPublisher     String?  @db.VarChar(100)
+  certTimestamp     DateTime
+  classification    String   @db.VarChar(100)
+  cylanceDeviceId   String   @db.Uuid
+  cylanceScore      Decimal  @db.Decimal()
+  detectedBy        String   @db.VarChar(100)
+  deviceName        String   @db.VarChar(100)
+  deviceState       String   @db.VarChar(100)
+  fileName          String   @db.VarChar(100)
+  filePath          String   @db.VarChar(4096)
+  fileSize          Int      @db.Integer
+  fileStatus        String   @db.VarChar(100)
+  globalQuarantined Boolean  @db.Boolean
+  safelisted        Boolean  @db.Boolean
+  ipAddresses       String   @db.VarChar(500)
+  lastFound         DateTime
+  macAddresses      String   @db.VarChar(500)
+  md5               String   @db.VarChar(100)
+  running           Boolean  @db.Boolean
+  sha256            String   @db.VarChar(100)
+  signed            Boolean  @db.Boolean
+  subClassification String   @db.VarChar(100)
+  uniqueToCylance   Boolean  @db.Boolean
+  zones             String[] 
+}
+

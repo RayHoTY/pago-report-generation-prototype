@@ -1,0 +1,19 @@
+Argument of type '{ headers: ({ label: string; property: string; width: number; renderer: null; } | 
+{ label: string; property: string; width: number; renderer: (value: any) => string; })[]; 
+datas: ({ description: string; ... 5 more ...; options?: undefined; } | { ...; } | { ...; })[]; rows: string[][]; }' 
+is not assignable to parameter of type 'Table'.
+
+  Types of property 'headers' are incompatible.
+    Type '({ label: string; property: string; width: number; renderer: null; } | { label: string; property: string; width: number; renderer: (value: any) => string; })[]' 
+    is not assignable to type '(string | Header)[]'.
+
+      Type '{ label: string; property: string; width: number; renderer: null; } | { label: string; property: string; width: number; renderer: (value: any) => string; }' 
+      is not assignable to type 'string | Header'.
+
+        Type '{ label: string; property: string; width: number; renderer: null; }' 
+        is not assignable to type 'string | Header'.
+          
+          Type '{ label: string; property: string; width: number; renderer: null; }' 
+          is not assignable to type 'Header'.
+            Types of property 'renderer' are incompatible.
+            Type 'null' is not assignable to type '((value: any, indexColumn?: number | undefined, indexRow?: number | undefined, row?: number | undefined, rectRow?: Rect | undefined, rectCell?: Rect | undefined) => string) | undefined'
