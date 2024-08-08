@@ -1,0 +1,26 @@
+# Dependencies
+node_modules
+
+# yarn error logs
+yarn-error.log
+
+# Environment varibales
+.env*
+!.env*.example
+.env
+
+# Code coverage
+coverage
+
+# misc
+.DS_Store
+
+# Dev db data
+db
+
+# TypeScript
+build
+
+# logs
+src/logfiles/*
+!src/logfiles/README.MD
