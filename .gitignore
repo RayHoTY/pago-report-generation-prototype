@@ -24,3 +24,8 @@ build
 # logs
 src/logfiles/*
 !src/logfiles/README.MD
+
+#proto records
+src/proto/doc/*
+src/proto/images/*
+src/proto/table-pdfs/*
